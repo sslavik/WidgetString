@@ -8,4 +8,5 @@
     <string name="tvTipoCliente">Tipo Cliente</string>
     <string name="tvProfesion">Profesión</string>
     <string name="tvNombre">Nombre</string>
+    <string name="tvMes">Mes</string>
 </resources>

@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvRazonSocial"
+        android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,22 +17,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edRazonSocial"
+        android:id="@+id/edNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/tvRazonSocial"
-        app:layout_constraintTop_toBottomOf="@+id/tvRazonSocial" />
+        app:layout_constraintStart_toStartOf="@+id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
 
     <TextView
-        android:id="@+id/tvRepresentante"
+        android:id="@+id/tvProfesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/tvProfesion"
-        app:layout_constraintStart_toStartOf="@+id/tvRazonSocial"
-        app:layout_constraintTop_toBottomOf="@+id/edRazonSocial" />
+        app:layout_constraintStart_toStartOf="@+id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@+id/edNombre" />
 
     <EditText
         android:id="@+id/edRepresentante"
@@ -40,7 +40,25 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/tvRepresentante"
-        app:layout_constraintTop_toBottomOf="@+id/tvRepresentante" />
+        app:layout_constraintStart_toStartOf="@+id/tvProfesion"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfesion" />
+
+    <TextView
+        android:id="@+id/tvMes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tvMes"
+        app:layout_constraintStart_toStartOf="@+id/edRepresentante"
+        app:layout_constraintTop_toBottomOf="@+id/edRepresentante" />
+
+    <AutoCompleteTextView
+        android:id="@+id/edMes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/tvMes"
+        app:layout_constraintTop_toBottomOf="@+id/tvMes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

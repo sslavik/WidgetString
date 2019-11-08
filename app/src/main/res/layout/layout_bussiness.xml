@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvRazonSocial" />
 
     <TextView
-        android:id="@+id/tvRepresentante"
+        android:id="@+id/tvProfesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -40,8 +40,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/tvRepresentante"
-        app:layout_constraintTop_toBottomOf="@+id/tvRepresentante" />
+        app:layout_constraintStart_toStartOf="@+id/tvProfesion"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfesion" />
 
     <TextView
         android:id="@+id/tvNempleado"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/tvEmpleado"
-        app:layout_constraintStart_toStartOf="@+id/tvRepresentante"
+        app:layout_constraintStart_toStartOf="@+id/tvProfesion"
         app:layout_constraintTop_toBottomOf="@+id/edRepresentante" />
 
     <EditText
