@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/tvRazonSocial"
@@ -52,13 +53,20 @@
         app:layout_constraintStart_toStartOf="@+id/tvProfesion"
         app:layout_constraintTop_toBottomOf="@+id/edRepresentante" />
 
-    <EditText
-        android:id="@+id/edEmpleado"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="82dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:entries="@array/spNumEmployees"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvNempleado"
         app:layout_constraintTop_toBottomOf="@+id/tvNempleado" />
+
+    <WebView
+        android:id="@+id/wbInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvNempleado"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
