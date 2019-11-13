@@ -37,8 +37,9 @@
             android:text="@string/rbParticular" />
     </RadioGroup>
 
-    <include
-        layout="@layout/layout_bussiness"
+    <ViewStub
+        android:id="@+id/vstCliente"
+        android:inflatedId="@layout/layout_bussiness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/tvTipoCliente"

@@ -64,8 +64,8 @@
                     ]]>
                 </string>
     <plurals name="numEmpleados">
-        <item quantity="zero">No hay empleados</item>
-        <item quantity="one">Empleado</item>
+        <item quantity="zero">La empresa no tiene empleados</item>
+        <item quantity="one">La empresa tiene un empleado</item>
         <item quantity="other">La empresa tiene %d empleados</item>
     </plurals>
 </resources>

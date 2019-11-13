@@ -1,13 +1,18 @@
 package com.sslavik.widgetstring;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewStub;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private AutoCompleteTextView atMes;
     private WebView wbInformation;
     private Spinner spCantEmpleados;
+    private RadioGroup rgTypeClient;
+    private ViewStub vstClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +38,34 @@ public class MainActivity extends AppCompatActivity {
         atMes = findViewById(R.id.atMes);
         wbInformation = findViewById(R.id.wbInformation);
         spCantEmpleados = findViewById(R.id.spinner);
+        rgTypeClient = findViewById(R.id.rgTipoCliente);
+        vstClient = findViewById(R.id.vstCliente);
         //intialiceAtMes();
-        initialiceWbInformation();
-        initialicespEmpleados();
+        //initialiceWbInformation();
+        //initialicespEmpleados(); // SE TIENE QUE HACER CUANDO EL LAYOUT TENGA LA REFERENCIA
+        initialiceRgTypeClient();
 
+    }
+
+    /**
+     * Método que realiza una accion cuando se selecciona un RadioButton del grupo
+     */
+    private void initialiceRgTypeClient() {
+        rgTypeClient.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                vstClient.
+                switch (checkedId){
+                    case R.id.rbEmpresa :
+                        vstClient.setLayoutResource(R.layout.layout_bussiness);
+                        break;
+                    case R.id.rbParticular:
+                        vstClient.setLayoutResource(R.layout.layout_particular);
+                        break;
+                }
+                vstClient.inflate();
+            }
+        });
     }
 
     private void initialicespEmpleados() {
@@ -43,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String mensaje = spCantEmpleados.getResources().getQuantityString(R.plurals.numEmpleados,
                         Integer.parseInt(spCantEmpleados.getSelectedItem().toString()));
+                mensaje = spCantEmpleados.getResources().getQuantityString(
+                            R.plurals.numEmpleados,
+                            Integer.parseInt(spCantEmpleados.getSelectedItem().toString()),
+                            Integer.parseInt((spCantEmpleados.getSelectedItem().toString())));
 
                 Toast.makeText(parent.getContext(), mensaje, Toast.LENGTH_SHORT).show();
             }
